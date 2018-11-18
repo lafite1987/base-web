@@ -25,5 +25,10 @@ public class PageWrapper<T> {
 		}
 	}
 	
-	
+	public static <T> PageWrapper<T> buildPageWrapper(int currentPage, int pageSize, int totalNum) {
+		PageWrapper.Page page = new Page(currentPage, pageSize, totalNum);
+		PageWrapper<T> pageWrapper = new PageWrapper<>();
+		pageWrapper.page = page;
+		return pageWrapper;
+	}
 }

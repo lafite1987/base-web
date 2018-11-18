@@ -9,12 +9,12 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import cn.lfy.base.interceptor.SessionInterceptor;
 
 @Configuration  
-public class MvcConfigurer extends WebMvcConfigurerAdapter {  
+public class MvcConfigurer implements WebMvcConfigurer {  
   
 //    @Override  
 //    public void addViewControllers(ViewControllerRegistry registry) {  
@@ -24,7 +24,6 @@ public class MvcConfigurer extends WebMvcConfigurerAdapter {
   
     @Override  
     public void configurePathMatch(PathMatchConfigurer configurer) {  
-        super.configurePathMatch(configurer);  
         configurer.setUseSuffixPatternMatch(false);  
     }  
   
